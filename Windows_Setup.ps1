@@ -30,7 +30,7 @@ function Create-EnvFile {
     Write-Host "Creating .env file in $directory..."
 
     @"
-MONGO_URI="$mongoUri"
+MDB_URI="$mongoUri"
 JWT_SECRET="$jwtSecret"
 "@ | Out-File -FilePath $envFilePath -Encoding utf8
 
