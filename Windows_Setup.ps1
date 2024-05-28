@@ -69,6 +69,9 @@ try {
 
     if ($choice -eq '1') {
         $mongoUri = Read-Host "Enter your MongoDB URI"
+        if ($mongoUri -match "\?") {
+            $mongoUri = $mongoUri -replace "\?", "logon-db?"
+        }
         $jwtSecret = Read-Host "Enter your JWT Secret Key"
 
         Install-NpmPackages -directory "frontend"
