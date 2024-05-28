@@ -4,7 +4,7 @@ My First fully functional authentication and authorization project. Built comple
 ## How to run
 
 ### Prerequisites
-1. Your MongoDB URI, you can get it from here [MongoDB](https://account.mongodb.com/account/login)
+1. Your MongoDB URI, you can get it by creating a MongoDB Atlas Database from here [MongoDB](https://account.mongodb.com/account/login)
 2. JWT Secret Key, you can generate it from here [JWT](https://www.grc.com/passwords.htm) use 64 Random Hexadecimal Characters
 
 ### Steps
