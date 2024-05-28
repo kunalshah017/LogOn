@@ -1,11 +1,11 @@
 # LogOn 
-My First fully functional authentication and authorization project. Built completely on MERN stack with Tailwind CSS
+My First fully functional authentication and authorization project. Built completely on MERN stack with Tailwind CSS, This is a developer-use project and has not been deployed anywhere, please run the project by following the below steps.
 
 ## How to run
 
 ### Prerequisites
 1. Your MongoDB URI, you can get it by creating a MongoDB Atlas Database from here [MongoDB](https://account.mongodb.com/account/login)
-2. JWT Secret Key, you can generate it from here [JWT](https://www.grc.com/passwords.htm) use 64 Random Hexadecimal Characters
+2. JWT Secret Key, you can generate it from here [JWT](https://www.grc.com/passwords.htm) using 64 Random Hexadecimal Characters
 
 ### Steps
 1. Clone the repository 
