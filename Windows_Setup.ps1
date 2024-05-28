@@ -29,10 +29,11 @@ function Create-EnvFile {
     $envFilePath = Join-Path -Path $directory -ChildPath ".env"
     Write-Host "Creating .env file in $directory..."
 
-    @"
+    $content = @"
 MDB_URI="$mongoUri"
 JWT_SECRET="$jwtSecret"
-"@ | Out-File -FilePath $envFilePath -Encoding utf8
+"@
+    $content | Out-File -FilePath $envFilePath -Encoding utf8
 
     Write-Host ".env file created." -ForegroundColor Green
 }
@@ -53,6 +54,15 @@ function Start-NpmServer {
     Start-Process powershell -ArgumentList "-NoExit", "-EncodedCommand", $encodedScript
 }
 
+# Function to open a browser
+function Open-Browser {
+    param (
+        [string]$url
+    )
+
+    Start-Process "msedge.exe" -ArgumentList $url
+}
+
 # Main script
 try {
     $choice = Read-Host "Enter 1 to setup environment, or 2 to start the server"
@@ -70,6 +80,8 @@ try {
     elseif ($choice -eq '2') {
         Start-NpmServer -directory "frontend" -command "dev"
         Start-NpmServer -directory "backend" -command "serve"
+        Start-Sleep -Seconds 5  # Wait a few seconds to ensure the frontend server starts
+        Open-Browser -url "http://localhost:5173"
     }
     else {
         Write-Host "Invalid choice. Please run the script again and enter 1 or 2." -ForegroundColor Red
